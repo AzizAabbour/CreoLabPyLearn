@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #3b82f6;
   --color-primary-dark: #2563eb;
@@ -10,6 +12,19 @@
   --color-python-yellow: #FFD43B;
   --font-sans: 'Outfit', 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-color: var(--border-color);
+  --color-shadow-color: var(--shadow-color);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
 }
 
 :root {
@@ -23,6 +38,7 @@
   --shadow-color: rgba(0, 0, 0, 0.08);
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(255, 255, 255, 0.3);
+  color-scheme: light;
 }
 
 .dark {
@@ -36,6 +52,7 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
   --glass-bg: rgba(15, 23, 42, 0.7);
   --glass-border: rgba(30, 41, 59, 0.5);
+  color-scheme: dark;
 }
 
 * {
